@@ -1,0 +1,29 @@
+import csv
+
+with open('employee_file.csv', mode='a+') as csv_file:
+    fieldnames = ['name', 'dept', 'id']
+    while True:
+        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+        if csv_file.tell()==0:
+            writer.writeheader()
+        writer.writerow({'name':input('Enter Name: '),'dept':input('Enter ept: '),'id':input('Enter ID: ')})
+        opt=input("do u want to insert one more record[yes|no]:")
+        if opt=='no':
+            break
+
+or
+
+import csv
+dict={'name':['a','b','c'],'dept':['python','java','UI'],'id':[1,2,3]}
+with open('employee_file3.csv', mode='a+',newline="") as csv_file:
+    fieldnames = [i for i in dict]
+    writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+    if csv_file.tell()==0:
+        writer.writeheader()
+    temp=[]
+    for i in dict.values():
+        temp.append(i)
+    zi=list(zip(*temp))
+    for j in zi:
+        writer.writerow({fieldnames[i]:j[i] for i in range(len(zi))})
+

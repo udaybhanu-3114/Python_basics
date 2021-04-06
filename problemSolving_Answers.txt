@@ -1,0 +1,152 @@
+
+1. How do you print the first non-repeated character from a string?
+
+s = input("Enter a String: ")
+while s != "":
+   slen0 = len(s)
+   ch = s[0]
+   s = s.replace(ch, "")
+   slen1 = len(s)
+   if slen1 == slen0-1:
+      print ("First non-repeating character is: ",ch)
+      break;
+output:  
+Enter a String: udhauifdf
+First non-repeating character is:  h
+===========================================================================
+2.How do you implement a bucket sort algorithm?
+
+def bucket_sort(alist):
+    largest = max(alist)
+    length = len(alist)
+    size = largest/length
+ 
+    buckets = [[] for _ in range(length)]
+    for i in range(length):
+        j = int(alist[i]/size)
+        if j != length:
+            buckets[j].append(alist[i])
+        else:
+            buckets[length - 1].append(alist[i])
+ 
+    for i in range(length):
+        insertion_sort(buckets[i])
+ 
+    result = []
+    for i in range(length):
+        result = result + buckets[i]
+ 
+    return result
+ 
+def insertion_sort(alist):
+    for i in range(1, len(alist)):
+        temp = alist[i]
+        j = i - 1
+        while (j >= 0 and temp < alist[j]):
+            alist[j + 1] = alist[j]
+            j = j - 1
+        alist[j + 1] = temp
+ 
+ 
+alist = input('Enter the list of (nonnegative) numbers: ').split()
+alist = [int(x) for x in alist]
+sorted_list = bucket_sort(alist)
+print('Sorted list: ', end='')
+print(sorted_list)
+
+Output:
+Enter the list of (nonnegative) numbers:  2 5 7 8 9 6 4 5
+Sorted list: [2, 4, 5, 5, 6, 7, 8, 9]
+===========================================================================
+3.How do you check if two rectangles overlap with each other?
+
+def isRectangleOverlap(rec1, rec2):          
+    if (rec1[0] == rec1[2] and rec1[1] == rec1[3] and \
+        rec2[0] == rec2[2] and rec2[1] == rec2[3]):
+                
+        return False
+    
+    if (rec1[2] <= rec2[0] or  rec1[3] <= rec2[1] or rec1[0] >= rec2[2] or rec1[1] >= rec2[3]):
+
+        return False
+    else:
+        return True
+
+rec1 =[]
+for i in range(4):
+    a = input(f'Enter rect1 {i} :')
+    rec1.append(int(a))
+rec2 =[]
+for i in range(4):
+    b = input(f'Enter rect2 {i} :')
+    rec2.append(int(b))
+    
+s=isRectangleOverlap(rec1, rec2)
+print(s)
+==========================================================================
+4. check if the given string is valid email address or not.
+
+import re
+regex = '^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$'
+email=input("Enter Email: ")
+def check(email):
+    if(re.search(regex, email)):
+        print("Valid Email")
+ 
+    else:
+        print("Invalid Email")
+ 
+check(email)
+
+or
+
+import re
+regex = '[a-zA-z0-9.\-]+@[a-z]+\.[a-z]+'
+email=input("Enter Email: ")
+def check(email):
+    if(re.search(regex, email)):
+        print("Valid Email")
+ 
+    else:
+        print("Invalid Email")
+ 
+check(email)
+
+Output:
+Enter Email: muday3114@gmail.com
+Valid Email
+=========================================================================
+5.How do you find all the permutations of a string? 
+
+from itertools import permutations 
+perm = permutations([1, 2, 3,4,5]) 
+for i in list(perm): 
+    print (i)
+
+or
+
+ini_str = input("Enter str:")
+  
+print("Initial string", ini_str)
+  
+result = []
+  
+def permute(data, i, length): 
+    if i == length: 
+        result.append(''.join(data) )
+    else: 
+        for j in range(i, length): 
+            # swap
+            data[i], data[j] = data[j], data[i] 
+            permute(data, i + 1, length) 
+            data[i], data[j] = data[j], data[i]  
+permute(list(ini_str), 0, len(ini_str))
+  
+print("Permutations", str(result))
+
+Output:
+Enter str:abc
+Initial string abc
+Permutations ['abc', 'acb', 'bac', 'bca', 'cba', 'cab'] 
+
+========================================================================

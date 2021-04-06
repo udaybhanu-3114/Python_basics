@@ -1,0 +1,295 @@
+1. How would you confirm that 2 strings have the same identity?
+
+name1 = "Uday"
+name2 = "Uday"
+print(id(name1))
+print(id(name2))
+print(name1==name2)
+
+1993919254576
+1993919254576
+True
+
+==========================================================================================
+2. How would you check if each word in a string begins with a capital letter?
+
+s = "ojas innovative technologies"
+print(s.title())
+
+Ojas Innovative Technologies
+
+===================================================================================
+3. Check if a string contains a specific substring
+
+s = "ojas innovative technologies"
+print("innovative" in s)
+
+True
+=====================================================================================
+4. Find the index of the first occurrence of a substring in a string
+
+s = "ojas innovative technologies"
+print(s.find("tech"))
+
+16
+===================================================================================
+5. Count the total number of characters in a string
+
+s = "ojas innovative technologies"
+print(len(s))
+
+28
+
+==================================================================================
+6. Count the number of a specific character in a string
+
+s = "ojas innovative technologies"
+print(s.count("o"))
+
+4
+===================================================================================
+7. Capitalize the first character of a string
+s = "ojas innovative technologies"
+print(s.capitalize())
+
+Ojas innovative technologies
+====================================================================================
+8. What is an f-string and how do you use it?
+
+*F-strings provide a concise and convenient way to embed python expressions inside string literals for formatting. 
+  
+a = "Uday"
+b = "python"
+c = "ojas"
+print(f"My name is {a}, I'm {b} trainee at {c}.".format(a,b,c))
+
+My name is Uday, I'm python trainee at ojas.
+===================================================================================
+9. Search a specific part of a string for a substring
+
+s1 = "My name is Uday, I'm python trainee at ojas."
+s2 = "python"
+if s2 in s1:
+    print(s2)
+
+python
+===================================================================================
+10. Interpolate a variable into a string using format()
+
+a = "Uday"
+b = "python"
+c = "ojas"
+print(f"My name is {a}, I'm {b} trainee at {c}.".format(a,b,c))
+
+My name is Uday, I'm python trainee at ojas.
+==================================================================================
+11. Check if a string contains only numbers
+a = "python123"
+b = "123456789"
+print(a.isdigit())
+print(b.isdigit())
+
+False
+True
+=================================================================================
+12. Split a string on a specific character
+
+x = "python is a programming language"
+print(x.split("pro"))
+
+['python is a ', 'gramming language']
+===========================================================================
+13. Check if a string is composed of all lower case characters
+
+x = "python is a programming language"
+print(x.islower())
+
+True
+===========================================================================
+14. Check if the first character in a string is lowercase
+
+x = "python is a programming language"
+print(x[0])
+print(x[0].islower())
+
+True
+==========================================================================
+15. Can an integer be added to a string in Python?
+
+No
+
+x = "python is a programming language"
+y = 10
+print(x+y)
+
+Traceback (most recent call last):
+  File "C:/Users/um21095/abc.py", line 3, in <module>
+    print(x+y)
+TypeError: can only concatenate str (not "int") to str
+
+==========================================================================
+16. Reverse the string “hello world”
+
+x = "hello world"
+
+print(x[::-1])
+
+dlrow olleh
+============================================================================
+17. Join a list of strings into a single string, delimited by hyphens
+
+x = "python is a programming language"
+y = "Ojas Innovative Technologies"
+
+print("-".join([x,y]))
+
+python is a programming language-Ojas Innovative Technologies
+===========================================================================
+18. Check if all characters in a string conform to ASCI
+
+x = "3165687991"
+print(x.isascii())
+
+True
+==========================================================================
+19. Uppercase or lowercase an entire string
+
+x = "python is a programming language"
+print(x.upper())
+
+PYTHON IS A PROGRAMMING LANGUAGE
+===========================================================================
+20. Uppercase first and last character of a string
+
+x = "python is a programming language"
+x = x[0:1].upper() + x[1:len(x)-1] + x[len(x)-1:len(x)].upper()
+print(x)
+
+Python is a programming languagE
+
+or
+
+x = "python is a programming language"
+
+print(x[0].upper())
+print(x[-1].upper())
+
+P  E
+===========================================================================
+21. Check if a string is all uppercase
+
+x = "PYTHON IS A PROGRAMMING LANGUAGE"
+
+print(x.isupper())
+
+True
+===========================================================================
+22. When would you use splitlines()?
+
+# When we want to break/dont want any particular string then we will use splitlines.
+
+x = "python is a programming language"
+print(x.split("pro"))	
+
+['python is a ', 'gramming language']
+===========================================================================
+23. Give an example of string slicing
+
+x = "PYTHON IS A PROGRAMMING LANGUAGE"
+
+print(x[2:30:2])
+
+TO SAPORMIGLNU
+============================================================================
+24. Convert an integer to a string
+
+x = 12345
+print(type(x))
+y = str(x)
+print(type(y))
+print(y)
+
+<class 'int'>
+<class 'str'>
+12345
+=============================================================================
+25. Check if a string contains only characters of the alphabet
+
+x = "PYTHONISAPROGRAMMINGLANGUAGE"
+
+print(x.isalpha())
+
+True
+===============================================================================
+26. Replace all instances of a substring in a string
+
+x = "Python is a programming languagE"
+s1 = "Python"
+s2 = "progra"
+y = str.maketrans("Python", "progra") 
+x = x.translate(y) 
+print( str(x))   
+
+progra is a prrgrammiag laaguagE
+===========================================================================
+27. Return the minimum character in a string
+
+string = "sky" 
+print(min(string)) 
+  
+string = "jwhgvfvg" 
+print(min(string)) 
+
+k
+f
+============================================================================
+28. Check if all characters in a string are alphanumeric
+
+x = "65697278"
+
+print(x.isalnum())
+
+True
+================================================================================
+29. Remove whitespace from the left, right or both sides of a string
+
+x = "         python is a programming language        "
+
+print(x.strip())
+
+python is a programming language
+================================================================================
+30. Check if a string begins with or ends with a specific character?
+
+x = "geeksforgeeks"
+if x.startswith("g"):
+    print("Starts with g")
+if x.endswith("s"):
+    print("ends with s")
+
+Starts with g
+ends with s
+
+================================================================================
+a="AAAABBBCCDAA"
+b="AAAABBBCCDAA"
+temp=[]
+count=j=0
+while j<len(b):
+    if a[0]!=b[j]:
+        temp.append(count)
+        temp.append(a[0])
+        a=a[count:]
+        count=0
+    else:
+        count=count+1
+        j=j+1
+temp.append(count)
+temp.append(a[0])
+st=""
+for i in temp:
+    st=st+str(i)
+print(st)
+
+Output:
+4A3B2C1D2A

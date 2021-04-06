@@ -1,0 +1,272 @@
+#Inputs:
+
+x = "python is a programming language"
+
+y = "Ojas Innovative Technologies"
+
+z = "65"
+
+k = "A"
+
+l = "int"
+
+m = " "
+
+n = "decode"
+
+
+u = "       python     "
+
+Answers:
+==========================================================================
+
+print(x.center(50,"@"))		##Returns a centered string
+
+@@@@@@@@@python is a programming language@@@@@@@@@
+
+=====================================================================
+
+print(x.capitalize())		##Converts the first character to upper case
+
+Python is a programming language
+
+====================================================================
+
+print(y.casefold())		##Converts string into lower case
+
+ojas innovative technologies
+
+=======================================================================
+
+print(x.count("o"))		##Returns the number of times a specified value occurs in a string
+
+2
+========================================================================
+
+print(x.endswith("e"))		##Returns true if the string ends with the specified value
+
+True
+========================================================================
+
+print(x.find("mm"))	##Searches the string for a specified value and returns the position of where it was found
+
+18
+======================================================================
+
+print("{0} {1}".format(y,x)) 		##Formats specified values in a string
+
+Ojas Innovative Technologies python is a programming language
+=====================================================================
+
+print(y.format_map(y))		##Formats specified values in a string
+
+Ojas Innovative Technologies
+=========================================================================
+
+print(y.index("I"))	##Searches the string for a specified value and returns the position of where it was found
+
+5
+=========================================================================
+
+print(x.encode())		##Returns an encoded version of the string
+
+b'python is a programming language'
+========================================================================
+
+print(z.isalnum())		##Returns True if all characters in the string are alphanumeric
+
+True
+=========================================================================
+
+print(k.isalpha())		##Returns True if all characters in the string are in the alphabet
+
+True
+========================================================================
+
+print(z.isascii())	##Returns True if all numerics in the strings are ascii values
+
+=========================================================================
+
+print(z.isdecimal())	##Returns True if all characters in the string are decimals
+
+True
+=========================================================================
+
+print(z.isdigit())	##Returns True if all characters in the string are digits
+
+True
+==============================================================================
+
+print(l.isidentifier())	##Returns True if the string is an identifier
+
+True
+=============================================================================
+
+print(l.islower())	##Returns True if all characters in the string are lower case
+
+True
+==========================================================================
+
+print(z.isnumeric())	##Returns True if all characters in the string are numeric
+
+True
+==========================================================================
+
+print(y.isprintable())	##Returns True if all characters in the string are printable
+
+True
+=============================================================================
+
+print(m.isspace())	##Returns True if all characters in the string are whitespaces
+
+True
+============================================================================
+
+print(y.istitle())	##Returns True if the string follows the rules of a title
+
+True
+================================================================================
+
+print(k.isupper())	##Returns True if all characters in the string are upper case
+
+True
+==============================================================================
+
+print("_".join([x,y]))	##Joins the elements of an iterable to the end of the string
+
+python is a programming language_Ojas Innovative Technologies
+============================================================================
+
+print(x.ljust(50),l)	##Returns a left justified version of the string
+
+python is a programming language                   int
+
+============================================================================
+
+print(y.lower())	##Converts a string into lower case
+
+ojas innovative technologies
+
+==========================================================================
+
+print(u.lstrip())	####Returns a left trim version of the string
+
+python    
+
+========================================================================
+
+print(x.partition("pro"))	##Returns a tuple where the string is parted into three parts
+
+('python is a ', 'pro', 'gramming language')
+
+==========================================================================
+
+print(n.removeprefix("de"))
+
+code
+===========================================================================
+
+print(n.removesuffix("code"))
+
+de
+============================================================================
+
+print(x.replace(x,y))	##Returns a string where a specified value is replaced with a specified value
+
+Ojas Innovative Technologies
+
+=======================================================================
+
+print(y.rfind("I"))	##Searches the string for a specified value and returns the last position of where it was found
+
+5
+==========================================================================
+
+print(y.rindex("I"))	##Searches the string for a specified value and returns the last position of where it was found
+
+5
+====================================================================
+
+print(x.rjust(50))	##Returns a right justified version of the string
+
+                  python is a programming language
+
+=========================================================================
+
+print(x.rpartition("pro"))	##Returns a tuple where the string is parted into three parts
+
+('python is a ', 'pro', 'gramming language')
+========================================================================
+
+print(x.rsplit("pro"))	##Splits the string at the specified separator, and returns a list
+
+['python is a ', 'gramming language']
+
+==========================================================================
+
+print(u.rstrip())	##Returns a right trim version of the string	
+
+       python
+
+===========================================================================
+
+print(x.rsplit("pro"))	##Splits the string at the specified separator, and returns a list
+
+['python is a ', 'gramming language']
+
+===========================================================================
+
+print(l.startswith("i"))	##Returns true if the string starts with the specified value
+
+True
+=============================================================================
+
+print(x.swapcase())	##Swaps cases, lower case becomes upper case and vice versa
+
+PYTHON IS A PROGRAMMING LANGUAGE
+
+==============================================================================
+
+print(x.title())	##Converts the first character of each word to upper case
+
+Python Is A Programming Language
+
+============================================================================
+
+print(y.translate(x))	##Returns a translated string
+
+Ojas Innovative Technologies
+
+==================================================================================
+
+print(l.upper())	##Converts a string into upper case
+
+INT
+
+===================================================================================
+
+print(l.zfill(20))	##Fills the string with a specified number of 0 values at the beginning
+
+00000000000000000int
+
+###############################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

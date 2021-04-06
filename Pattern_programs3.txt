@@ -1,0 +1,409 @@
+1. Write a program to print the following Patterns
+  1 2 3 4 5 
+  1 2 3 4 5  
+  1 2 3 4 5 
+  1 2 3 4 5 
+  1 2 3 4 5
+
+A:-
+
+n = int(input("Enter n value:"))
+for i in range(1,n+1):
+    for j in range(1,n+1):
+        print(j,end=" ")
+    print()
+
+Output:
+
+Enter n value:5
+1 2 3 4 5 
+1 2 3 4 5 
+1 2 3 4 5 
+1 2 3 4 5 
+1 2 3 4 5 
+
+=========================================================
+
+2.Write a program to print the following Pattern
+  5 4 3 2 1 
+  5 4 3 2 1
+  5 4 3 2 1
+  5 4 3 2 1
+  5 4 3 2 1 
+
+A:-
+
+n = int(input("Enter n value:"))
+for i in range(1,n+1):
+    for j in range(1,n+1):
+        print(n+1-j,end=" ")
+    print()
+
+Output:
+
+Enter n value:5
+5 4 3 2 1 
+5 4 3 2 1 
+5 4 3 2 1 
+5 4 3 2 1 
+5 4 3 2 1 
+=====================================================================
+
+3.Write a program to print the following Pattern
+  5 5 5 5 5 
+  4 4 4 4 4 
+  3 3 3 3 3 
+  2 2 2 2 2 
+  1 1 1 1 1
+
+A:-
+n = int(input("Enter n value:"))
+for i in range(1,n+1):
+    for j in range(1,n+1):
+        print(n+1-i,end=" ")
+    print()
+
+Output:
+Enter n value:5
+5 5 5 5 5 
+4 4 4 4 4 
+3 3 3 3 3 
+2 2 2 2 2 
+1 1 1 1 1 
+
+
+=====================================================================
+4.Write a program to print the following Pattern
+  1
+  1 2
+  1 2 3
+  1 2 3 4
+  1 2 3 4 5
+
+Ans:-
+n = int(input("Enter n value:"))
+for i in range(1,n+1):
+    for j in range(1,i+1):
+        print(j,end=" ")
+    print()
+
+Output:
+Enter n value:5
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5 
+
+
+=====================================================================
+5.Write a program to print the following Pattern
+  1 
+  2 2 
+  3 3 3 
+  4 4 4 4 
+  5 5 5 5 5
+
+Ans:
+
+n = int(input("Enter n value:"))
+for i in range(1,n+1):
+    for j in range(1,i+1):
+        print(i,end=" ")
+    print()
+
+Output:
+Enter n value:5
+1 
+2 2 
+3 3 3 
+4 4 4 4 
+5 5 5 5 5 
+==================================================================
+6.Write a program to print the following Pattern
+  1 
+  2 3  
+  4 5 6 
+  7 8 9 10 
+  11 12 13 14 15
+
+Ans:
+current_num = 1
+n = int(input("Enter n:"))
+stop = 2
+for i in range(n):
+    for column in range(1, stop):
+        print(current_num, end=' ')
+        current_num += 1
+    print("")
+    stop += 1
+
+or
+
+n = int(input("Enter n:"))
+s = 0
+for i in range(1,n+1):
+    for j in range(1,i+1):
+        s=s+1
+        print(s,end=" ")
+    print(" ")
+
+Output:
+Enter n:5
+1 
+2 3 
+4 5 6 
+7 8 9 10 
+11 12 13 14 15 
+=====================================================================
+7.Write a program to print the following Pattern
+  5 
+  4 4 
+  3 3 3 
+  2 2 2 2 
+  1 1 1 1 1
+
+Output:
+n = int(input("Enter n value:"))
+for i in range(1,n+1):
+    for j in range(1,i+1):
+        print(n+1-i,end=" ")
+    print()
+
+Output:
+Enter n value:5
+5 
+4 4 
+3 3 3 
+2 2 2 2 
+1 1 1 1 1 
+
+=======================================================================
+8.Write a program to print the following Pattern
+  1 
+  2 3 
+  3 4 5 
+  4 5 6 7 
+  5 6 7 8 9 
+
+Ans:
+n = int(input("Enter n value:"))
+for i in range(1,n+1):
+    for j in range(1,i+1):
+        print(i+j-1,end=" ")
+    print()
+
+Output:
+Enter n value:5
+1 
+2 3 
+3 4 5 
+4 5 6 7 
+5 6 7 8 9 
+
+======================================================================
+9.Write a program to print the following Pattern
+  A 
+  B C
+  D E F
+  G H I J
+  K L M N O
+Ans:-
+
+# ASCII number of 'A'
+n = int(input("Enter n:"))
+ascii_number = 65
+for i in range(0, n):
+    for j in range(0, i + 1):
+        character = chr(ascii_number)
+        print(character, end=' ')
+        ascii_number += 1
+    print(" ")
+
+Output:
+Enter n:5
+A  
+B C  
+D E F  
+G H I J  
+K L M N O  
+=====================================================================
+10.Write a program to print the following Pattern
+   * * * * * 
+   * * * * * 
+   * * * * * 
+   * * * * * 
+   * * * * * 
+
+A:-
+
+n = int(input("Enter n value:"))
+for i in range(1,n+1):
+    for j in range(1,n+1):
+        print("*",end=" ")
+    print()
+
+Output:
+Enter n value:5
+* * * * * 
+* * * * * 
+* * * * * 
+* * * * * 
+* * * * * 
+
+=========================================================
+11.Write a program to print the following Pattern
+   * 
+   * * 
+   * * * 
+   * * * * 
+   * * * * * 
+Ans:
+n = int(input("Enter n value:"))
+for i in range(1,n+1):
+    for j in range(1,i+1):
+        print("*",end=" ")
+    print()
+
+Output:
+Enter n value:5
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+=========================================================
+12.Write a program to print the following Pattern
+    * * * * * 
+    *       * 
+    *       * 
+    *       * 
+    * * * * * 
+Ans:
+n = int(input("Enter n value:"))
+for i in range(1,n+1):
+    for j in range(1,n+1):
+        if ((i==1 or i==n) or (j==1 or j==n)):
+            print("*",end=" ")
+        else:
+            print(" ",end=" ")
+    print()
+Output:
+Enter n value:5
+* * * * * 
+*       * 
+*       * 
+*       * 
+* * * * * 
+
+=========================================================
+13.Write a program to print the following Pattern
+          * 
+        * * * 
+      * * * * * 
+    * * * * * * *
+
+Ans:
+n = int(input("Enter n:"))
+a = 1
+for i in range(n,0,-1):
+ for j in range(i,0,-1):
+  print(" ",end=" ")
+ print(" * "*a)
+ a+=2
+
+Output:
+Enter n:5
+           * 
+         * * * 
+       * * * * * 
+     * * * * * * * 
+   * * * * * * * * * 
+
+==============================================================
+14.Display Multiplication Table in given range using Nested for loops
+
+Ans:
+
+lower = int(input("Enter lower range: "))
+upper = int(input("Enter upper range: "))
+
+for i in range(lower,upper+1):
+ for j in range(1,11):
+  print(i, "*", j, "=",i*j,end="\t")
+ print( )
+
+
+Output:
+Enter upper range: 5
+1 * 1 = 1	1 * 2 = 2	1 * 3 = 3	1 * 4 = 4	1 * 5 = 5	1 * 6 = 6	1 * 7 = 7	1 * 8 = 8	1 * 9 = 9	1 * 10 = 10	
+2 * 1 = 2	2 * 2 = 4	2 * 3 = 6	2 * 4 = 8	2 * 5 = 10	2 * 6 = 12	2 * 7 = 14	2 * 8 = 16	2 * 9 = 18	2 * 10 = 20	
+3 * 1 = 3	3 * 2 = 6	3 * 3 = 9	3 * 4 = 12	3 * 5 = 15	3 * 6 = 18	3 * 7 = 21	3 * 8 = 24	3 * 9 = 27	3 * 10 = 30	
+4 * 1 = 4	4 * 2 = 8	4 * 3 = 12	4 * 4 = 16	4 * 5 = 20	4 * 6 = 24	4 * 7 = 28	4 * 8 = 32	4 * 9 = 36	4 * 10 = 40	
+5 * 1 = 5	5 * 2 = 10	5 * 3 = 15	5 * 4 = 20	5 * 5 = 25	5 * 6 = 30	5 * 7 = 35	5 * 8 = 40	5 * 9 = 45	5 * 10 = 50	
+
+======================================================================
+15.Display Prime Numbers in the given range using nested for loops 
+
+Ans:
+
+i = 2
+while(i < 50):
+    j = 2
+    while(j <= (i/j)):
+        if not(i%j):
+            break
+        j = j + 1
+    if (j > i/j) :
+        print(i, " is prime")
+    i = i + 1  
+
+Output:
+
+2  is prime
+3  is prime
+5  is prime
+7  is prime
+11  is prime
+13  is prime
+17  is prime
+19  is prime
+23  is prime
+29  is prime
+31  is prime
+37  is prime
+41  is prime
+43  is prime
+47  is prime
+
+=====================================================================
+
+16.Write a program to print the following Pattern
+	1
+      3 2
+    6 5 4
+10  9 8 7
+==========================================================
+
+17.Write a program to print the following Pattern
+10 9 8 7
+   6 5 4
+     3 2
+       1
+
+Ans:
+
+a = 10
+for i in range(4,0,-1):
+    for j in range(i,4):
+        print(" ",end="  ")
+    for k in range(1,i+1):
+        print(a,end="  ")
+        a = a-1
+    print()
+
+ Output:
+10 9 8 7  
+   6 5 4  
+     3 2  
+       1  

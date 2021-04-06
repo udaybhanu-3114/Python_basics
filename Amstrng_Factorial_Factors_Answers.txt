@@ -1,0 +1,63 @@
+Amstrong:
+
+def armstrong(a):
+	temp=0
+	if a.isdigit():
+		for i in a:
+			temp=temp+int(i)**3
+		if int(a) == temp:
+			print("armstrong")
+		else:
+			print("not armstrong")
+	else:
+		print("error")
+a=input("enter a number")
+armstrong(a)
+
+Output:
+enter a number153
+armstrong
+
+===========================================================================
+Factorial:
+
+def fact(a):
+	import math
+	if a.isdigit():
+		print(math.factorial(int(a)))
+	else:
+		print("error")
+a=input("enter a number")
+fact(a)
+
+Ouput:
+enter a number5
+120
+
+============================================================================
+
+List_Factors:
+
+def lst_fact(a):
+	import math
+	if a.isdigit():
+		for i in range(1,int(a)+1):
+			if int(a)%i == 0:
+				print(i)
+	else:
+		print("error")
+a=input("enter a number")
+lst_fact(a)
+
+
+Output:
+enter a number100
+1
+2
+4
+5
+10
+20
+25
+50
+100

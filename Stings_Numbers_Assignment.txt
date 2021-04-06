@@ -1,0 +1,305 @@
+1.Write a program which will find all such numbers which are divisible by 7 but are not a multiple of 5, between 2000 and 3200 (both included).
+The numbers obtained should be printed in a comma-separated sequence on a single line.
+
+nl=[]
+for x in range(2000, 3200):
+    if (x%7==0) and (x%5!=0):
+        nl.append(str(x))
+print (','.join(nl))
+
+Output:
+
+2002,2009,2016,2023,2037,2044,2051,2058,2072,2079,2086,2093,2107,2114,2121,2128,2142,2149,2156,2163,2177,2184,2191,2198,2212,2219,2226,2233,2247,2254,
+2261,2268,2282,2289,2296,2303,2317,2324,2331,2338,2352,2359,2366,2373,2387,2394,2401,2408,2422,2429,2436,2443,2457,2464,2471,2478,2492,2499,2506,2513,
+2527,2534,2541,2548,2562,2569,2576,2583,2597,2604,2611,2618,2632,2639,2646,2653,2667,2674,2681,2688,2702,2709,2716,2723,2737,2744,2751,2758,2772,2779,
+2786,2793,2807,2814,2821,2828,2842,2849,2856,2863,2877,2884,2891,2898,2912,2919,2926,2933,2947,2954,2961,2968,2982,2989,2996,3003,3017,3024,3031,3038,
+3052,3059,3066,3073,3087,3094,3101,3108,3122,3129,3136,3143,3157,3164,3171,3178,3192,3199
+
+======================================================================================================================================================
+2.Write a program which can compute the factorial of a given numbers.
+The results should be printed in a comma-separated sequence on a single line.
+Suppose the following input is supplied to the program:
+8
+Then, the output should be:
+40320
+
+n=int(input("Enter n:" ))
+fact = 1  
+for i in range(1,n+1): 
+    fact = fact * i 
+      
+print ("The factorial of",n," is : ",end="") 
+print (fact) 
+
+Output:
+
+Enter n:8
+The factorial of 8  is : 40320
+===================================================================================================================================================================
+3.With a given integral number n, write a program to generate a dictionary that contains (i, i*i) such that is an integral number between 1 and n (both included). 
+and then the program should print the dictionary.
+Suppose the following input is supplied to the program:
+8
+Then, the output should be:
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64}
+
+lst=[1,2,3,4,5,6,7,8]
+
+for n in lst:
+    d={n:n**2}
+    print(d,end=" ")
+
+Output:
+{1: 1} {2: 4} {3: 9} {4: 16} {5: 25} {6: 36} {7: 49} {8: 64} 
+====================================================================================================================================================================
+4.Write a program which accepts a sequence of comma-separated numbers from console and generate a list and a tuple which contains every number.
+Suppose the following input is supplied to the program:
+34,67,55,33,12,98
+Then, the output should be:
+['34', '67', '55', '33', '12', '98']
+('34', '67', '55', '33', '12', '98')
+
+t1=()
+s1=[]
+for i in range(1,11):
+    s1.append(str(i))
+print(s1,end=" ")
+t1=t1+tuple(s1)
+print(t1,end=" ")
+
+Output:
+['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'] 
+('1', '2', '3', '4', '5', '6', '7', '8', '9', '10') 
+===================================================================================================================================================================
+5.Define a class which has at least two methods:
+getString: to get a string from console input
+printString: to print the string in upper case.
+Also please include simple test function to test the class methods.
+
+class IOString():
+    def __init__(self):
+        self.str1 = ""
+
+    def get_String(self):
+        self.str1 = input()
+
+    def print_String(self):
+        print(self.str1.upper())
+
+str1 = IOString()
+str1.get_String()
+str1.print_String()
+
+Output:
+uday
+UDAY
+
+======================================================================================================================================================================
+6.Write a program that calculates and prints the value according to the given formula:
+Q = Square root of [(2 * C * D)/H]
+Following are the fixed values of C and H:
+C is 50. H is 30.
+D is the variable whose values should be input to your program in a comma-separated sequence.
+Example
+Let us assume the following comma separated input sequence is given to the program:
+100,150,180
+The output of the program should be:
+18,22,24
+
+C=50
+H=30
+D=int(input("Enter D:"))
+Q =round(((2 * C * D)//(H))**(0.5))
+print(Q)
+
+
+Output:
+Enter D:100
+18
+========================================================================================================================================================================
+7.Write a program which takes 2 digits, X,Y as input and generates a 2-dimensional array. The element value in the i-th row and j-th column of the array should be i*j.
+Note: i=0,1.., X-1; j=0,1,Â¡Â­Y-1.
+Example
+Suppose the following inputs are given to the program:
+3,5
+Then, the output of the program should be:
+[[0, 0, 0, 0, 0], [0, 1, 2, 3, 4], [0, 2, 4, 6, 8]] 
+
+i,j=3,5
+print([[0 for k in range(j)]]+[[a for a in range(0,j*b,b)] for b in range(1,i)])
+
+Output:
+[[0, 0, 0, 0, 0], [0, 1, 2, 3, 4], [0, 2, 4, 6, 8]]
+========================================================================================================================================================================
+8.Write a program that accepts a comma separated sequence of words as input and prints the words in a comma-separated sequence after sorting them alphabetically.
+Suppose the following input is supplied to the program:
+without,hello,bag,world
+Then, the output should be:
+bag,hello,without,world
+
+s=['without','hello','bag','world']
+
+print(sorted(s))
+
+
+Output:
+['bag', 'hello', 'without', 'world']
+=========================================================================================================================================================================
+
+9.Write a program that accepts sequence of lines as input and prints the lines after making all characters in the sentence capitalized.
+Suppose the following input is supplied to the program:
+Hello world
+Practice makes perfect
+Then, the output should be:
+HELLO WORLD
+PRACTICE MAKES PERFECT
+
+a="uday"
+print(a.upper())
+
+Output:
+'UDAY'
+============================================================================================================================================================================
+10.Write a program that accepts a sequence of whitespace separated words as input and prints the words after removing all duplicate words and sorting them alphanumerically.
+Suppose the following input is supplied to the program:
+hello world and practice makes perfect and hello world again
+Then, the output should be:
+again and hello makes perfect practice world
+
+
+phrase = input("Type in: ")
+phrase_splited = phrase.split(' ')
+
+word_list = []
+for i in phrase_splited:
+    if i not in word_list:
+        word_list.append(i)
+    else:
+        continue
+word_list.sort()
+print((' ').join(word_list))
+
+Output:
+
+Type in: hello world and practice makes perfect and hello world again
+again and hello makes perfect practice world
+
+=================================================================================================================================================================================
+11.Write a program which accepts a sequence of comma separated 4 digit binary numbers as its input and then check whether they are divisible by 5 or not. 
+The numbers that are divisible by 5 are to be printed in a comma separated sequence.
+Example:
+0100,0011,1010,1001
+Then the output should be:
+1010
+Notes: Assume the data is input by console.
+
+items = []
+num = [x for x in input().split(',')]
+for p in num:
+    x = int(p, 2)
+    if not x%5:
+        items.append(p)
+print(','.join(items))
+
+Output:
+0100,0011,1010,1001
+
+1010
+
+=================================================================================================================================================================================
+12.Write a program, which will find all such numbers between 1000 and 3000 (both included) such that each digit of the number is an even number.
+The numbers obtained should be printed in a comma-separated sequence on a single line.
+
+items = []
+for i in range(1000,3000 ):
+    s = str(i)
+    if (int(s[0])%2==0) and (int(s[1])%2==0) and (int(s[2])%2==0):
+        items.append(s)
+print( ",".join(items))
+
+Output:
+
+2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2040,2041,2042,2043,2044,2045,2046,2047,2048,2049,
+2060,2061,2062,2063,2064,2065,2066,2067,2068,2069,2080,2081,2082,2083,2084,2085,2086,2087,2088,2089,2200,2201,2202,2203,2204,2205,2206,2207,2208,2209,
+2220,2221,2222,2223,2224,2225,2226,2227,2228,2229,2240,2241,2242,2243,2244,2245,2246,2247,2248,2249,2260,2261,2262,2263,2264,2265,2266,2267,2268,2269,
+2280,2281,2282,2283,2284,2285,2286,2287,2288,2289,2400,2401,2402,2403,2404,2405,2406,2407,2408,2409,2420,2421,2422,2423,2424,2425,2426,2427,2428,2429,
+2440,2441,2442,2443,2444,2445,2446,2447,2448,2449,2460,2461,2462,2463,2464,2465,2466,2467,2468,2469,2480,2481,2482,2483,2484,2485,2486,2487,2488,2489,
+2600,2601,2602,2603,2604,2605,2606,2607,2608,2609,2620,2621,2622,2623,2624,2625,2626,2627,2628,2629,2640,2641,2642,2643,2644,2645,2646,2647,2648,2649,
+2660,2661,2662,2663,2664,2665,2666,2667,2668,2669,2680,2681,2682,2683,2684,2685,2686,2687,2688,2689,2800,2801,2802,2803,2804,2805,2806,2807,2808,2809,
+2820,2821,2822,2823,2824,2825,2826,2827,2828,2829,2840,2841,2842,2843,2844,2845,2846,2847,2848,2849,2860,2861,2862,2863,2864,2865,2866,2867,2868,2869,
+2880,2881,2882,2883,2884,2885,2886,2887,2888,2889
+
+
+
+
+=================================================================================================================================================================================
+13.Write a program that accepts a sentence and calculate the number of letters and digits.
+Suppose the following input is supplied to the program:
+hello world! 123
+Then, the output should be:
+LETTERS 10
+DIGITS 3
+
+s = input("Input a string")
+d=l=0
+for c in s:
+    if c.isdigit():
+        d=d+1
+    elif c.isalpha():
+        l=l+1
+    else:
+        pass
+print("Letters", l)
+print("Digits", d)
+
+Output:
+Input a stringhfdgffg43876
+Letters 7
+Digits 5
+=================================================================================================================================================================================
+14.Write a program that accepts a sentence and calculate the number of upper case letters and lower case letters.
+Suppose the following input is supplied to the program:
+Hello world!
+Then, the output should be:
+UPPER CASE 1
+LOWER CASE 9
+
+def string_test(s):
+    d={"UPPER_CASE":0, "LOWER_CASE":0}
+    for c in s:
+        if c.isupper():
+           d["UPPER_CASE"]+=1
+        elif c.islower():
+           d["LOWER_CASE"]+=1
+        else:
+           pass
+    print ("Original String : ", s)
+    print ("No. of Upper case characters : ", d["UPPER_CASE"])
+    print ("No. of Lower case Characters : ", d["LOWER_CASE"])
+
+string_test('The quick Brown Fox')
+
+Output:
+Original String :  The quick Brown Fox
+No. of Upper case characters :  3
+No. of Lower case Characters :  13
+===================================================================================================================================================================================
+15.Write a program that computes the value of a+aa+aaa+aaaa with a given digit as the value of a.
+Suppose the following input is supplied to the program:
+9
+Then, the output should be:
+11106
+
+value = input("Enter value: ")
+
+n1 = value * 1
+n2 = value * 2
+n3 = value * 3
+n4 = value * 4
+
+total = int(n1) + int(n2) + int(n3) + int(n4)
+print(total)
+
+Enter value: 9
+11106
+####################################################################################################################################################################################

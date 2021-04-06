@@ -1,0 +1,96 @@
+1.Write a Python program to read last n lines of a file.
+Ans:
+N = int(input('Enter Number: '))
+fname = 'File.txt'
+
+with open(fname) as file: 
+    for line in (file.readlines() [-N:]): 
+        print(line, end ='') 
+  
+======================================================================
+2.Write a Python program to read a file line by line and store it into a list.
+Ans:
+with open('File.txt') as f:
+                   
+    content_list = f.readlines()
+    print(content_list)
+
+or
+
+fname = 'verbs.txt'
+l=[]
+with open(fname) as file: 
+    for line in (file.readlines()):
+        l.append(line) 
+print(l)    
+    
+=======================================================================
+3.Write a Python program to read a file line by line store it into a variable.
+Ans:
+with open ('File.txt', "r") as myfile:
+    data=myfile.readlines()
+    print(data)
+========================================================================
+4. Write a Python program to count the frequency of words in a file
+Ans:
+from collections import Counter
+def word_count(fname):
+        with open(fname) as f:
+                return Counter(f.read().split())
+==============================================================================
+5.Write a Python program to read a random line from a file.
+Ans:
+import random
+def random_line(fname):
+    lines = open(fname).read().splitlines()
+    return random.choice(lines)
+===============================================================================
+6.Write a Python program to generate 26 text files named A.txt, B.txt, and so on up to Z.txt.
+import string, os
+if not os.path.exists("letters"):
+   os.makedirs("letters")
+for letter in string.ascii_uppercase:
+   with open(letter + ".txt", "w") as f:
+       f.writelines(letter)
+=================================================================================
+7.Write a Python program to extract characters from various text files and puts them into a list.
+Ans:
+
+import glob
+char_list = []
+files_list = glob.glob("*.txt")
+for file_elem in files_list:
+   with open(file_elem, "r") as f:
+       char_list.append(f.read())
+print(char_list)
+==================================================================================
+8.Write a Python program that takes a text file as input and returns the number of words of a given text file
+Note: Some words can be separated by a comma with no space.
+
+def count_words(filepath):
+   with open(filepath) as f:
+       data = f.read()
+       data.replace(",", " ")
+       return len(data.split(" "))
+print(count_words("words.txt"))
+===================================================================================
+10.Write a Python program to create a file where all letters of English alphabet are listed by specified number of letters on each line
+
+import math
+with open('alpha.txt','w') as f:
+    n=int(input("enter no"))
+    k=65
+    lst=[]
+    for i in range(0,math.ceil(26/n)):
+        a=""
+        for j in range(0,n):
+            a=a+chr(k)
+            if k==90:
+                break
+            k+=1
+        lst.append(a+"\n")
+        a=""
+        print()
+    for i in lst:
+        f.write(i)
+===================================================================================================

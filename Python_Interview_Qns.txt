@@ -1,0 +1,171 @@
+Some of the interview question 
+
+Aujas Network:
+
+1). What is inheritance and expalin about it.
+
+2). what is the difference between sqlite3 and mysql.
+
+3). what is Joins in mysql, join types and explain.
+
+4). what is your current project and your role in that project.
+
+ 
+
+Cognizant:
+
+1.  What are Data types in python.
+
+2.  What are list and tupple.
+
+3. What are variables and assigned variables.
+
+4. Git commands.
+
+5. Inner list.
+
+ 
+
+Global Logic Interview Questions:
+
+1). About Project.
+
+2). What difficulties faced in Project.
+
+3). How many types of methods in REST-API.
+
+4). How to insert data into database according to their requirement.
+
+5). Query for getting data from table.
+
+6). Elaborate How to get data from database using REST-API (scratch code from starting to end).
+
+7). Unit Testing.
+
+ 
+
+Cognizant Interview Questions:
+
+1). Profiling in python.
+
+2). Python default debugging.
+
+3). integrartion tools.
+
+4). linux.
+
+5). shell scripting.
+
+6). remove space usinng regular expression.
+
+7). decorators and user_defined decorators.
+
+8). how to write a method without self.
+
+9). Ruby, Amazon Web SErvices, gensim, search pattern.
+
+10).how to get parametrs from request in rest api.
+
+11).Inheritance.
+
+ 
+
+Fujitsu Interview Questions:
+
+1). What is Inheritance and many types of inheritance, what are they?
+
+2). What is Lamda Function.
+
+3). Why we use Lambda function.
+
+4). Which code of Lamda Function you written in your Project.(Explain The Logic).
+
+5). open function, In which package open function available.
+
+6). list, tuple, set, dictionary.
+7). linux experiance.Some of the interview question which I remember are 
+
+Aujas Network:
+
+1). What is inheritance and expalin about it.
+
+2). what is the difference between sqlite3 and mysql.
+
+3). what is Joins in mysql, join types and explain.
+
+4). what is your current project and your role in that project.
+
+ 
+
+Cognizant:
+
+1.  What are Data types in python.
+
+2.  What are list and tupple.
+
+3. What are variables and assigned variables.
+
+4. Git commands.
+
+5. Inner list.
+
+ 
+
+Global Logic Interview Questions:
+
+1). About Project.
+
+2). What difficulties faced in Project.
+
+3). How many types of methods in REST-API.
+
+4). How to insert data into database according to their requirement.
+
+5). Query for getting data from table.
+
+6). Elaborate How to get data from database using REST-API (scratch code from starting to end).
+
+7). Unit Testing.
+
+ 
+
+Cognizant Interview Questions:
+
+1). Profiling in python.
+
+2). Python default debugging.
+
+3). integrartion tools.
+
+4). linux.
+
+5). shell scripting.
+
+6). remove space usinng regular expression.
+
+7). decorators and user_defined decorators.
+
+8). how to write a method without self.
+
+9). Ruby, Amazon Web SErvices, gensim, search pattern.
+
+10).how to get parametrs from request in rest api.
+
+11).Inheritance.
+
+ 
+
+Fujitsu Interview Questions:
+
+1). What is Inheritance and many types of inheritance, what are they?
+
+2). What is Lamda Function.
+
+3). Why we use Lambda function.
+
+4). Which code of Lamda Function you written in your Project.(Explain The Logic).
+
+5). open function, In which package open function available.
+
+6). list, tuple, set, dictionary.
+7). linux experiance.

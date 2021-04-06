@@ -1,0 +1,435 @@
+1. Write a program to find sum of number.
+
+x = 10
+y = 20
+z = (x + y)
+print("The sum of Numbers :",z)
+
+Output: 
+
+The sum of Numbers : 30
+
+==================================================
+2. 2. WAP to find the number is strong number or not
+
+# Variable to store sum of the numbers  
+
+sum=0  
+
+# Ask user to enter the number
+  
+num=int(input("Enter a number:"))  
+
+# temporary variable  store copy of the original number 
+ 
+temp=num  
+
+# Using while loop  
+
+while(num):  
+
+    # intialize with 1
+  
+    i=1  
+
+    # fact variable with 1 
+ 
+    fact=1  
+
+    rem=num%10  
+
+    while(i<=rem):  
+
+        fact=fact*i   # Find factorial of each number 
+ 
+        i=i+1  
+
+    sum=sum+fact  
+
+    num=num//10  
+
+if(sum==temp):  
+
+    print("Given number is a strong number")
+  
+else:  
+
+    print("Given number is not a strong number")  
+
+Output:
+145
+Given number is a strong number
+===================================================
+3. Python Program to Find the Square Root
+
+import math
+x = 10
+print("The square root of x is:")
+print(math.sqrt(x))
+
+Output:
+The square root of x is:
+3.1622776601683795
+
+or 
+
+num = int(input("Enter a number:"))
+sqrt = num ** 0.5
+print(sqrt)
+
+Output:
+The square root of x is:
+3.1622776601683795
+
+======================================================
+4. Python Program to Calculate the Area of a Triangle
+
+# Area of Triangle
+# we Have formula : 1/2 * b * h
+
+b = 15
+h = 30
+
+a = 1/2 * b * h
+
+print("Area of the triangle is:")
+print(a)
+
+Output:
+Area of the triangle is:
+225.0
+
+===============================================================
+5. Python Program to Solve Quadratic Equation 
+
+# Solve Quadratic Equation
+# We have Formulae: a) -b+Sqrt((b**2-4ac)/2a)  b)-b-Sqrt((b**2-4ac)/2a)
+
+import math
+a = 6
+b = 11
+c = -35
+
+d = (b**2) - (4*a*c)
+
+# find two solutions
+sol1 = (-b-math.sqrt(d))/(2*a)
+sol2 = (-b+math.sqrt(d))/(2*a)
+
+print(sol1)
+print(sol2)
+
+Output:
+
+-3.5
+1.6666666666666667
+=====================================================================
+
+6. Python Program to Swap Two Variables 
+
+x = 10
+y = 20
+
+swap = x
+x = y
+y = swap
+
+print("x =",x,"y =",y)
+
+Output:
+x = 20 y = 10
+
+
+or
+
+
+x = 10
+y = 20
+
+x = x + y
+y = x - y
+x = x - y
+
+print(x,y)
+
+Output:
+20 , 10
+===========================================================
+
+7. Python Program to Convert Kilometres to Miles 
+
+# Taking kilometers input from the user
+kilometers = float(input("Enter value in kilometers: "))
+
+# conversion factor
+conv_fac = 0.621371
+
+# calculate miles
+miles = kilometers * conv_fac
+print('%0.2f kilometers is equal to %0.2f miles' %(kilometers,miles))
+
+Output:
+Enter value in kilometers: 30
+30.00 kilometers is equal to 18.64 miles
+===========================================================================
+8. Python Program to Check Leap Year 
+
+# Taking Leap year as Input
+year = int(input("Enter Year: "))
+
+if (year % 4 == 0 and year % 100 != 0)|(year % 100 == 0)|(year % 400 ==0):
+    
+    print(year, "is a Leap Year")
+else:
+    print(year, "is not a Leap Year")
+
+Output:
+Enter Year: 2016
+2016 is a Leap Year
+=============================================================================
+9. Python Program to Check Prime Number 
+
+# Program to check if a number is prime or not
+# To take input from the user
+num = int(input("Enter a number: "))
+
+# prime numbers are greater than 1
+if num > 1:
+   # check for factors
+   for i in range(2,num):
+       if (num % i) == 0:
+           print(num,"is not a prime number")
+           print(i,"times",num//i,"is",num)
+           break
+   else:
+       print(num,"is a prime number")
+       
+# if input number is less than
+# or equal to 1, it is not prime
+else:
+   print(num,"is not a prime number")
+
+Output:
+Enter a number: 99
+99 is not a prime number
+3 times 33 is 99
+=================================================================
+
+10. Python Program to Find the Factorial of a Number
+def factorial(n):
+    if(n==1):
+        return 1
+    else:
+        return n * factorial(n-1)
+res = factorial(5)
+print(res)
+
+Output:
+120
+=================================================================
+ 
+11. Python Program to Print the Fibonacci sequence 
+
+def fibonacci(n):
+    a = 0
+    b = 1    
+    if n < 0:
+        print("Incorrect input")
+    
+    elif n == 0:
+        return 0
+       
+    # Check if n is equal to 1
+    elif n == 1:
+        return b
+    else:
+        for i in range(1, n):
+            c = a + b
+            a = b
+            b = c
+        return b
+ 
+print(fibonacci(9))
+ 
+Output:
+34
+================================================================
+
+12. Python Program to Check Armstrong Number 
+
+num = int(input("Enter a number: "))
+
+# initialize sum
+sum = 0
+
+# find the sum of the cube of each digit
+temp = num
+while temp > 0:
+   digit = temp % 10
+   sum += digit ** 3
+   temp //= 10
+
+# display the result
+if num == sum:
+   print(num,"is an Armstrong number")
+else:
+   print(num,"is not an Armstrong number")
+Output:
+Enter a number: 153
+153 is an Armstrong number
+
+===========================================================================
+13. Python Program to Find Armstrong Number in an Interval 
+lower = int(input("Enter lower range: "))
+upper = int(input("Enter upper range: "))
+ 
+for num in range(lower,upper + 1):
+   # initialize sum
+   sum = 0
+ 
+   # find the sum of the cube of each digit
+   temp = num
+   while temp > 0:
+       digit = temp % 10
+       sum += digit ** 3
+       temp //= 10
+ 
+   if num == sum:
+       print(num)
+Output:
+Enter lower range: 1
+Enter upper range: 10000
+1
+153
+370
+371
+407
+========================================================================
+14. Python Program to Find the Sum of Natural Numbers 
+
+num = 16
+
+if num < 0:
+   print("Enter a positive number")
+else:
+   sum = 0
+   # use while loop to iterate until zero
+   while(num > 0):
+       sum = sum + num
+       num = num - 1
+   print("The sum is", sum)
+
+Output:
+136
+
+==========================================================================
+
+15. Python Program to Find the Factors of a Number 
+
+def print_factors(x):
+   print("The factors of",x,"are:")
+   for i in range(1, x + 1):
+       if x % i == 0:
+           print(i)
+
+num = 320
+
+print_factors(num)
+
+Output:
+The factors of 320 are:
+1
+2
+4
+5
+8
+10
+16
+20
+32
+40
+64
+80
+160
+320
+==========================================================================
+
+
+16. Python Program to Convert Decimal to Binary, Octal and Hexadecimal 
+
+def convertToBinary(n):
+   if n > 1:
+       convertToBinary(n//2)
+   print(n % 2,end = '')
+
+# decimal number
+dec = 34
+
+convertToBinary(dec)
+print()
+
+Output:
+100010
+
+=========================================================================
+
+def convertToHexaDecimal(n):
+   if n > 1:
+       convertToHexaDecimal(n//16)
+   print(n % 16,end = '')
+
+# Octal number
+dec = 344
+
+convertToHexaDecimal(dec)
+print()
+
+Output:
+158
+===============================================================
+
+17. Python Program to Find LCM 
+
+a = float(input(" Please Enter the First Value a: "))
+b = float(input(" Please Enter the Second Value b: "))
+
+if(a > b):
+    maximum = a
+else:
+    maximum = b
+
+while(True):
+    if(maximum % a == 0 and maximum % b == 0):
+        print("\n LCM of {0} and {1} = {2}".format(a, b, maximum))
+        break;
+    maximum = maximum + 1
+
+Output:
+
+Please Enter the First Value a: 24
+ Please Enter the Second Value b: 60
+
+ LCM of 24.0 and 60.0 = 120.0
+
+Or
+
+# This function computes GCD 
+def compute_gcd(x, y):
+
+   while(y):
+       x, y = y, x % y
+   return x
+
+# This function computes LCM
+def compute_lcm(x, y):
+   lcm = (x*y)//compute_gcd(x,y)
+   return lcm
+
+num1 = 54
+num2 = 24 
+
+print("The G.C.D is", compute_gcd(num1, num2))
+print("The L.C.M is", compute_lcm(num1, num2))
+
+The G.C.D is 6
+The L.C.M is 216

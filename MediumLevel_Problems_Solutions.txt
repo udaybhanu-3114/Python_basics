@@ -1,0 +1,428 @@
+1.Given a binary string S of length N, the task is to find the longest substring consisting of ‘1’s only present in the string after deleting a character from the string.
+
+Examples:
+
+Input: S = “1101”
+Output: 3
+Explanation: 
+Removing S[0], S modifies to “101”. Longest possible substring of ‘1’s is 1.
+Removing S[1], S modifies to “101”. Longest possible substring of ‘1’s is 1.
+Remoing S[2], S modifies to “111”. Longest possible substring of ‘1’s is 3.
+Removing S[3], S modifies to “110”. Longest possible substring of ‘1’s is 2.
+Therefore, longest substring of ‘1’s that can be obtained is 3.
+
+Input: S = “011101101”
+Output: 5
+
+Ans:
+st=input("enter binay no")
+lst=list(st)
+max_count=[]
+max_ones=[]
+len_ones=[]
+for i in range(len(st)):
+    lst.pop(i)
+    stri="".join(lst)
+    import re
+    for j in range(1,len(stri)+1):
+        ones='1'*j
+        c=re.findall(ones,stri)
+        max_count.extend(c)
+    max_ones.append(max_count[-1])
+    for i in max_ones:
+        len_ones.append(len(i))
+    lst=list(st)
+print(max(len_ones))
+
+Output:
+enter binay no: 0100101111100010
+6
+============================================================================================================================
+2.Given a string of lowercase alphabets and a number k, the task is to print the minimum value of the string after removal of ‘k’ characters. 
+The value of a string is defined as the sum of squares of the count of each distinct character. For example consider the string “saideep”, 
+here frequencies of characters are s-1, a-1, i-1, e-2, d-1, p-1 and value of the string is 1^2 + 1^2 + 1^2 + 1^2 + 1^2 + 2^2 = 9.
+
+Expected Time Complexity: O(k*logn)
+
+Examples:
+
+Input :  str = abccc, K = 1
+Output :  6
+We remove c to get the value as 1^2 + 1^2 + 2^2
+
+Input :  str = aaab, K = 2
+Output :  2
+
+Ans:
+import collections
+a = input("Enter a String:")
+k = int(input("Enter K: "))
+d=dict()
+s=list(a)
+c=[]
+temp=0
+count=collections.Counter(s)
+print(count)
+d.update(count)  
+for i in d.values():
+    print(i)
+    c.append(i)
+c.sort()
+c[-1]=c[-1]-k
+print(c)
+print(sum([x**2 for x in c ]))
+
+Output:
+Enter a String:saideep
+Enter K: 0
+Counter({'e': 2, 's': 1, 'a': 1, 'i': 1, 'd': 1, 'p': 1})
+1
+1
+1
+1
+2
+1
+[1, 1, 1, 1, 1, 2]
+9
+
+Enter a String:abccc
+Enter K: 1
+Counter({'c': 3, 'a': 1, 'b': 1})
+1
+1
+3
+[1, 1, 2]
+6
+
+Enter a String:aaab
+Enter K: 2
+Counter({'a': 3, 'b': 1})
+3
+1
+[1, 1]
+2
+==============================================================================================================================
+3.Given a Binary string str of length N, the task is to find the last character removed from the string by repeatedly removing the first character 
+of the string and flipping all the characters of the string if the removed character is ‘0’.
+
+Examples:
+
+Input: str = “1001” 
+Output: ‘0’ 
+Explanation: 
+Removing str[0] from the string modifies str to “00”. 
+Removing str[0] from the string modifies str to “10”. 
+Removing str[0] from the string modifies str to “0”. 
+Since the last character removed was ‘0’, the required output is ‘0’.
+
+Input: str = “10010” 
+Output: ‘0’ 	 
+
+Ans:
+s="1001"
+lst=list(s)
+for i in range(len(s)+1):
+    if lst[0] == '1' or lst[0]==1:
+        lst.pop(0)
+        lst=lst
+    elif lst[0] == '0' or lst[0]==0:
+        k=len(lst)
+        for i in range(len(lst)):
+            lst.append(int(not int(lst[i])))
+        lst=lst[k:]
+    print(lst)
+
+Output:
+Enter a String1001
+[0, 0, 1]
+[1, 0]
+[0]
+===============================================================================================================================
+4.Given a string str consisting of characters ‘(‘, ‘)’, ‘[‘, ‘]’, ‘{‘ and ‘}’ only. The task is to find the maximum length of the balanced string 
+after removing any character and swapping any two adjacent characters.
+
+Examples:
+
+Input: str = “))[]]((”
+Output: 6
+The string can be converted to ()[]()
+
+Input: str = “{{{{{{{}”
+Output: 2
+
+Ans:
+
+str = input("Enter str: ")
+if str.count('(') <= str.count(')'):
+	no_para=str.count('(')
+else:
+	no_para=str.count(')')
+if str.count('[') <= str.count(']'):
+	no_square=str.count('[')
+else:
+	no_para=str.count(']')
+if str.count('{') <= str.count('}'):
+	no_curly=str.count('{')
+else:
+	no_curly=str.count('}')
+print(2*(no_para)+2*(no_square)+2*(no_curly))
+
+Output:
+Enter str: ))[]]((
+6
+==============================================================================================================================
+5.Problem Statement: Little Robert likes mathematics. Today his teacher has given him two integers and asked to find out how many integers 
+can divide both the numbers. Would you like to help him in completing his school assignment?
+
+Input Formatting: Thre is two integers, a and b as input to the program.
+
+Output Formatting: Print the number of common factors of a and b. Both the input value should be in a range of 1 to 10^12.
+
+Example:
+
+Input: 10 15
+Output: 2
+Explanation: The common factors of 10 and 15 are 1 and 5. So the answer will be 2.
+
+Ans:
+a,b=10,15
+se1=set()
+se2=set()
+for i in range(1,a):
+    if a%i == 0:
+        se1.add(i)
+for j in range(1,b):
+    if b%j == 0:
+        se2.add(j)
+print(len(se1.intersection(se2)))
+
+Output:
+Enetr a: 1000
+Enetr b: 5600
+12
+
+Enetr a: 10
+Enetr b: 15
+2
+
+===============================================================================================================================
+6.Does it Divide?
+This problem is asked in the HackerEarth contest.
+
+Problem Statement: Consider a permutation of numbers from 1 to N written on a paper. Let’s denote the product of its element as ‘prod’ and 
+the sum of its elements as ‘sum’. Given a positive integer N, your task is to determine whether ‘prod’ is divisible by ‘sum’ or not.
+
+Input Format: First input will be an integer T.  It depicts a number of test cases. Followed by value for each test case. Each test case will contain 
+an integer N (1<= N <=10^9). It is nothing but the length of the permutation.
+
+Output Format: For each test case, print “YEAH” if ‘prod’ is divisible by ‘sum’, otherwise print “NAH”.
+
+Ans:
+
+a=input("Enter a: ")
+import itertools
+import math
+
+lst=list(a)
+for i in list(itertools.permutations(lst)):
+	permu_value=[int(i) for i in list(i)]
+if math.prod(permu_value)%sum(permu_value) == 0:
+	print("YEAH")
+else:
+	print("NAH")
+
+Output:
+Enter a: 123
+YEAH
+===============================================================================================================================
+7. This competitive coding question is asked in Goldman Sachs.
+
+Problem Statement: Suppose you have given the stock prices for respective days like (100, 180, 260, 310, 40, 535, 695). 
+The stock price for the 1st day is 100, 2nd day it is 180 and so on. Write a Python program to determine what days the user should buy and 
+sell the stocks to get the maximum profit.
+
+In the above case, in the following scenarios user will get maximum profit.
+
+Buy stock on 1st day (100)
+Sell stock on 4th day (310)
+Buy stock on 5th day  (40)
+Sell stock on 7th day (695)
+
+Ans:
+d1 = [1,2,3,4,5,6,7]
+
+st_value = [100,180,260,310,40,535,695]
+fst_values=st_value[0]
+var=0
+#print(st_value[0])
+
+for i in range(1,len(st_value)-1):
+    if fst_values>st_value[i]:
+        var=var+st_value.index(st_value[i-1])
+
+next_buy=st_value[var+1]
+next_buy_ind=st_value.index(next_buy)
+
+print("buy stock on {}st day {}".format(1,st_value[0]))
+print("sell stock on {}th day {}".format(var+1,st_value[var]))
+print("buy stock on {}th day {}".format(next_buy_ind+1,next_buy))
+print("sell stock on {}th day {}".format(st_value.index(max(st_value[next_buy_ind+1:]))+1,max(st_value[next_buy_ind+1:])))
+
+Output:
+buy stock on 1st day 100
+sell stock on 4th day 310
+buy stock on 5th day 40
+sell stock on 7th day 695
+>>> 
+==============================================================================================================================
+8.You have given an array (list in case of Python). Find the index of the element in the array such that the sum of all the elements left to 
+the index is equal to the sum of all the elements right to the index.
+
+This question can also be asked as
+
+Split the array into equal sum subarrays.
+
+Example:
+
+Input (given array list):
+[2, 4, 5, 1, 2, 3]
+
+Output:
+2
+
+Explanation:
+The left and right sub array for the index "2" is [2, 4] and [1, 2, 3]. The sum of both the sub array is 6. 
+There are multiple ways to find the index of the array such that the sum of the left and right subarray is equal.
+
+Ans:
+lst = [5,4,1,6,4,1,3,2,5,1,4,3,1,1] 
+
+for i,j in enumerate(lst):
+    a = i
+    temp = sum(lst[:a])
+    temp2 = sum(lst[a+1:])
+    if temp == temp2:
+        print(a)
+
+Output:
+5
+===============================================================================================================================
+9.Problem Statement: You have given a set of coins. Write a program to find the minimum number of coins required to match the given amount value.
+
+Example
+You have coins 1, 5, 7, 9, 11. Calculate minimum number of coins required for any input amount 250. 
+
+Example:
+AMount 6 will require 2 coins (1, 5). 
+Amount 25 will require 3 coins (5, 9, 11).
+
+val = int(input("Enter the number: "))
+
+lst = [1,5,7,9,11]
+
+def comb(listt,temp):
+    final = []
+        while temp>0:
+            for i in listt[::-1]:
+                if i<=temp:
+                    final.append(i) 
+                    temp-=i
+	    break
+
+    return final
+ 
+
+def comb1(listt,temp):
+    final = []
+    while temp>0:
+        for i in listt[::-1]:
+            if i<=temp:
+                final.append(i) 
+                temp-=i
+    return final
+
+def search(value):
+    res=[]
+    for i in lst:
+        if i < val:
+            res.append(i)
+    return res 
+
+if val in lst:
+    print(f"count: {1} number : {val}")
+else:
+    search_list = search(val)
+    result = comb(search_list,val)
+    result1 = comb1(search_list,val)
+    print(result)
+    print(result1)
+    if len(result)<len(result1):
+        print(f"count: {len(result)}, result: {sorted(result)}")
+    else:
+        print(f"count: {len(result1)}, result: {sorted(result1)}")
+
+
+Output:
+Enter the number: 6
+[5, 1]
+[5, 1]
+count: 2, result: [1, 5]
+
+Enter the number: 25
+[11, 11, 1, 1, 1]
+[11, 9, 5]
+count: 3, result: [5, 9, 11]
+===============================================================================================================================
+10.Design a program to take a word as an input, and then encode it into a Pig Latin. A Pig Latin is an encrypted word in English, which is generated by doing following alterations:
+
+The first vowel occurring in the input word is placed at the start of the new word along with the remaining alphabets of it. The alphabets present before 
+the first vowel are shifted at the end of the new word followed by “ay”.
+Examples:
+
+Input: s = "paris"
+Output: arispay
+
+Input: s = "amazon"
+Output: amazonay
+
+Ans:
+
+s1 = input("Enter String: ")
+
+def isVowel(c): 
+    return (c == 'A' or c == 'E' or c == 'I' or
+            c == 'O' or c == 'U' or c == 'a' or
+            c == 'e' or c == 'i' or c == 'o' or
+            c == 'u'); 
+  
+  
+def pigLatin(s): 
+  
+    # the index of the first vowel is stored. 
+    length = len(s); 
+    index = -1; 
+    for i in range(length): 
+        if (isVowel(s[i])): 
+            index = i; 
+            break; 
+  
+    # Pig Latin is possible only if vowels 
+    # is present 
+    if (index == -1): 
+        return "-1"; 
+  
+    # Take all characters after index (including 
+    # index). Append all characters which are before 
+    # index. Finally append "ay" 
+    return s[index:] + s[0:index] + "ay"; 
+  
+str = pigLatin(s1); 
+if (str == "-1"): 
+    print("No vowels found. Pig Latin not possible"); 
+else: 
+    print(str); 
+  
+Output:
+Enter String: uday
+udayay
+===============================================================================================================================

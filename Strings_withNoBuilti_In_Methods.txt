@@ -1,0 +1,370 @@
+1.How do you print duplicate characters from a string?
+
+Ans:
+
+string = "abbagfddfgs";  
+   
+print("Duplicate characters in a given string: ");  
+  
+for i in range(0, len(string)):  
+    count = 1;  
+    for j in range(i+1, len(string)):  
+        if(string[i] == string[j] and string[i] != ' '):  
+            count = count + 1;  
+
+            #Set string[j] to 0 to avoid printing visited character  
+
+            string = string[:j] + '0' + string[j+1:];  
+   
+    #A character is considered as duplicate if count is greater than 1
+  
+    if(count > 1 and string[i] != '0'):  
+        print(string[i]) 
+
+Output:
+
+Duplicate characters in a given string: 
+a
+b
+g
+f
+d
+
+===============================================================================
+
+
+2.How do you find all the permutations of a string? 
+
+s = input("Enter a String:")
+
+def permute(data, i, length): 
+    if i==length: 
+        print((data) )
+    else: 
+        for j in range(i,length): 
+            #swap
+            data[i], data[j] = data[j], data[i] 
+            permute(data, i+1, length) 
+            data[i], data[j] = data[j], data[i]  
+
+
+string = s
+n = len(string) 
+data = list(string) 
+permute(data, 0, n)
+
+Output:
+
+Enter a String:sky
+sky
+syk
+ksy
+kys
+yks
+ysk
+
+
+===============================================================================
+
+
+3.How can a given string be reversed using recursion?
+def reverse(string): 
+    if len(string) == 0: 
+        return
+      
+    temp = string[0] 
+    reverse(string[1:]) 
+    print(temp, end='') 
+string = "python"
+reverse(string) 
+
+Output:
+
+nohtyp
+
+
+===============================================================================
+
+4.How do you check if a string contains only digits?
+
+##Taking input a String
+i=0
+string=input('Enter the String:')
+##Iterating through each character in string
+for element in string:
+    if element not in '0123456789':
+                i+=1
+if i>0:
+    print('String contains other Character!')
+else:
+    print('String contains Digit Only!')
+
+Output:
+
+Enter the String:12345
+String contains Digit Only!
+
+===============================================================================
+
+5.How do you print the first non-repeated character from a string?
+
+s1=input("Enter a String: ")
+
+NO_OF_CHARS = 256
+ 
+# Returns an array of size 256 containg count
+# of characters in the passed char array
+def getCharCountArray(string):
+    c = [0] * NO_OF_CHARS
+    for i in string:
+        c[ord(i)]+= 1
+    return c
+ 
+# The function returns index of first non-repeating
+# character in a string. If all characters are repeating
+# then returns -1
+def firstNonRepeating(string):
+    c = getCharCountArray(string)
+    index = -1
+    k = 0
+ 
+    for i in string:
+        if c[ord(i)] == 1:
+            index = k
+            break
+        k += 1
+ 
+    return index
+ 
+# Driver program to test above function
+string = s1
+index = firstNonRepeating(string)
+if index == 1:
+    print ("Either all characters are repeating or string is empty")
+else:
+    print ("First non-repeating character is " + string[index])
+
+Output:
+
+p
+
+
+===============================================================================
+
+6.How do you check if two strings are a rotation of each other?( check if two String is an anagram of each other)
+
+s1 = input("Enter 1st string:")
+s2 = input("Enter 2nd string:")
+
+n = 256
+def areRotations(string1, string2): 
+    size1 = len(string1) 
+    size2 = len(string2) 
+    temp = '' 
+  
+    # Check if sizes of two strings are same 
+    if size1 != size2: 
+        return 0
+  
+    # Create a temp string with value str1.str1 
+    temp = string1 + string1 
+  
+    # Now check if str2 is a substring of temp 
+    # string.count returns the number of occurrences of 
+    # the second string in temp
+    c = [0]*n
+    for i in string2:
+        c[ord(i)]+=1
+    return c
+    if (temp.c(string2)> 0): 
+        return 1
+    else: 
+        return 0
+  
+# Driver program to test the above function 
+string1 = s1
+string2 = s2
+  
+if areRotations(string1, string2): 
+    print("Strings are rotations of each other")
+else: 
+    print ("Strings are not rotations of each other")
+
+Output:
+
+Enter 1st string:anhd
+Enter 2nd string:dhna
+Strings are rotations of each other
+
+==================================================================================================================
+
+7.Check if the string is anagram or not , if not make it anagram.
+
+s1=input("Enter first string: ")
+s2=input("Enter second string: ")
+
+temp = ""
+if len(s1)==len(s2):
+    if(sorted(s1)==sorted(s2)):
+        print("Strings are Anagrams")
+    else:
+        print("Not a Anagram")
+        for i in s2:
+            if i in s1:
+                temp+=i
+        for j in s1:
+            if j not in temp:
+                temp+=j
+        print(temp)
+        print("S1 :",sorted(s1))
+        print("s2: after making anagram",sorted(temp))
+        if sorted(temp)==sorted(s1):
+            print("Anagram")
+else:
+    print("Not Anagram")
+
+Output:
+
+Enter first string: hello
+Enter second string: world
+Not a Anagram
+olhe
+S1 : ['e', 'h', 'l', 'l', 'o']
+s2: after making anagram ['e', 'h', 'l', 'o']
+
+================================================================================
+
+8.Given string str, How do you find the longest palindromic substring in str?
+
+s = input("Enter a String: ")
+
+def printSubStr(s, low, high):
+     
+    for i in range(low, high + 1):
+        print(s[i], end = "")
+ 
+# This function prints the
+# longest palindrome subString
+# It also returns the length
+# of the longest palindrome
+
+def longestPalSubstr(s):
+     
+    # Get length of input String
+    n = len(s)
+     
+    # All subStrings of length 1
+    # are palindromes
+    maxLength = 1
+    start = 0
+     
+    # Nested loop to mark start
+    # and end index
+    for i in range(n):
+        for j in range(i, n):
+            flag = 1
+             
+            # Check palindrome
+            for k in range(0, ((j - i) // 2) + 1):
+                if (s[i + k] != s[j - k]):
+                    flag = 0
+ 
+            # Palindrome
+            if (flag != 0 and (j - i + 1) > maxLength):
+                start = i
+                maxLength = j - i + 1
+                 
+    print("Longest palindrome subString is: ", end = "")
+    printSubStr(s, start, start + maxLength - 1)
+ 
+    # Return length of LPS
+    return maxLength
+ 
+# Driver Code
+if __name__ == '__main__':
+     
+    print("\nLength is: ", longestPalSubstr(s))
+ 
+Output:
+ 
+Enter a String: abchdfgffabc
+Longest palindrome subString is: fgf
+Length is:  3
+
+==================================================================================
+
+9.How do you remove a given character from String? 
+
+s = input("Enter a string: ")
+  
+ 
+print ("Original string: " + s) 
+   
+result_str = "" 
+   
+for i in range(0, len(s)): 
+    if i != 3: 
+        result_str = result_str + s[i] 
+   
+# Printing string after removal   
+print ("String after removal of i'th character : " + result_str)
+
+Output:
+
+Enter a string: python
+Original string: python
+String after removal of i'th character : pyton
+
+==================================================================================
+
+10.How do you find the length of the longest substring without repeating characters
+
+s = input("Enter a String: ")
+
+
+def longestUniqueSubsttr(s):
+     
+    n = len(s)
+     
+    # Result
+    res = 0
+  
+    for i in range(n):
+          
+        # Note : Default values in 
+        # visited are false
+
+        visited = [0] * 256  
+  
+        for j in range(i, n):
+  
+            # If current character is visited
+            # Break the loop
+            if (visited[ord(s[j])] == True):
+                break
+  
+            # Else update the result if
+            # this window is larger, and mark
+            # current character as visited.
+            else:
+                res = max(res, j - i + 1)
+                visited[ord(s[j])] = True
+             
+        # Remove the first character of previous
+        # window
+        visited[ord(s[i])] = False
+     
+    return res
+ 
+# Driver code
+print("The input is ", s)
+ 
+len = longestUniqueSubsttr(s)
+print("The length of the longest "
+      "non-repeating character substring is ", len)
+
+Output:
+The input is  pythonlanguage
+The length of the longest non-repeating character substring is  8
+
+====================================================================================
